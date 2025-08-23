@@ -176,7 +176,7 @@ func GetAvailableModels() []ModelInfo {
 			IsDefault:   true,
 		},
 		{
-			ID:          "gpt-5-mini",
+			ID:          "gpt-5-mini", 
 			Name:        "GPT-5-mini",
 			Description: "Fast, high-quality model for advanced reasoning and concise responses",
 			IsDefault:   false,
