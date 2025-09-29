@@ -136,6 +136,7 @@ Never lose important conversations:
 | :----------------- | :---------------------------------------- | :------------- | :----------------------- | :----------------------- | :----------------------------------------- |
 | **GPT-5-Mini**     | gpt-5-mini                                | gpt-5-mini     | Adaptive problem-solving | Multimodal reasoning     | • Context-aware<br>• Efficient with nuance |
 | **GPT-4o mini**    | gpt-4o-mini                               | gpt-4o-mini    | General purpose          | Everyday questions       | • Fast<br>• Well-balanced                  |
+| **GPT-OSS**        | openai/gpt-oss-120b                       | gpt-oss        | General purpose          | Everyday questions       | • based on open training material          |
 | **Claude 3 Haiku** | claude-3-haiku-20240307                   | claude-3-haiku | Creative writing         | Explanations & summaries | • Clear responses<br>• Concise             |
 | **Llama 3.3 70B**  | meta-llama/Llama-3.3-70B-Instruct-Turbo   | llama          | Programming              | Code-related tasks       | • Technical precision<br>• Detailed        |
 | **Mistral Small**  | mistralai/Mistral-Small-24B-Instruct-2501 | mixtral        | Knowledge & analysis     | Complex topics           | • Reasoning<br>• Logic-focused             |

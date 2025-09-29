@@ -229,6 +229,7 @@ func handleModelChange(cfg *Config, chatSession interfaces.ChatSession) {
 		Options: []string{
 			"gpt-5-mini",
 			"gpt-4o-mini",
+			"gpt-oss",
 			"claude-3-haiku",
 			"llama",
 			"mixtral",

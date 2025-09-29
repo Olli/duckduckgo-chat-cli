@@ -20,7 +20,7 @@ type ChatRequest struct {
 // ModelChangeRequest represents a model change request
 // @Description Model change request payload
 type ModelChangeRequest struct {
-	Model string `json:"model" binding:"required" example:"gpt-4o-mini" enum:"gpt-4o-mini,claude-3-haiku,llama,mixtral,o4mini"`
+	Model string `json:"model" binding:"required" example:"gpt-4o-mini" enum:"gpt-4o-mini,gpt-oss,claude-3-haiku,llama,mixtral,o4mini"`
 } // @name ModelChangeRequest
 
 // API Response Types

@@ -22,6 +22,7 @@ type ModelAlias string
 const (
 	GPT4Mini Model = "gpt-4o-mini"
 	GPT5Mini Model = "gpt-5-mini"
+	GPTOSS   Model = "openai/gpt-oss-120b"
 	Claude3  Model = "claude-3-haiku-20240307"
 	Llama    Model = "meta-llama/Llama-3.3-70B-Instruct-Turbo"
 	Mixtral  Model = "mistralai/Mistral-Small-24B-Instruct-2501"
@@ -29,6 +30,7 @@ const (
 
 	GPT4MiniAlias ModelAlias = "gpt-4o-mini"
 	GPT5MiniAlias ModelAlias = "gpt-5-mini"
+	GPTOSSAlias		ModelAlias = "gpt-oss"
 	Claude3Alias  ModelAlias = "claude-3-haiku"
 	LlamaAlias    ModelAlias = "llama"
 	MixtralAlias  ModelAlias = "mixtral"
@@ -47,6 +49,7 @@ var modelMap = map[ModelAlias]Model{
 var modelDisplayMap = map[Model]string{
 	GPT4Mini: "GPT-4o-mini",
 	GPT5Mini: "GPT-5-mini",
+	GPTOSS: 	"GPT-OSS",
 	Claude3:  "Claude-3-haiku",
 	Llama:    "Llama 3.3",
 	Mixtral:  "Mistral Small 3",
