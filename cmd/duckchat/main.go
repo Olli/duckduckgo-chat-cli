@@ -127,10 +127,6 @@ func main() {
 	cfg = config.Initialize()
 	models.CheckChromeVersion()
 
-	if !config.AcceptTermsOfService(cfg) {
-		ui.Warningln("You must accept the terms to use this app. Exiting.")
-		return
-	}
 
 	chatSession = chat.InitializeSession(cfg)
 

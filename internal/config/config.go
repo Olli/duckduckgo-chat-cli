@@ -100,7 +100,7 @@ func Initialize() *Config {
 
 func loadConfig() *Config {
 	cfg := &Config{
-		TOSAccepted:      false,
+		TOSAccepted:      true,
 		DefaultModel:     "gpt-4o-mini",
 		ExportDir:        defaultExportPath(),
 		LastUpdateTime:   time.Now(),
@@ -171,27 +171,6 @@ func SaveConfig(cfg *Config) error {
 // Private version for internal use
 func saveConfig(cfg *Config) error {
 	return SaveConfig(cfg)
-}
-
-func AcceptTermsOfService(cfg *Config) bool {
-	if cfg.TOSAccepted {
-		return true
-	}
-
-	var accepted bool
-	prompt := &survey.Confirm{
-		Message: "Please accept the terms of service to continue. Do you accept?",
-		Default: true,
-	}
-	survey.AskOne(prompt, &accepted)
-
-	if accepted {
-		cfg.TOSAccepted = true
-		if err := saveConfig(cfg); err != nil {
-			ui.Warningln("Warning: Failed to save config: %v", err)
-		}
-	}
-	return accepted
 }
 
 func HandleConfiguration(cfg *Config, chatSession interfaces.ChatSession) {
