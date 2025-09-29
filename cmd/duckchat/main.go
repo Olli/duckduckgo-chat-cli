@@ -16,6 +16,7 @@ import (
 	"duckduckgo-chat-cli/internal/models"
 	"duckduckgo-chat-cli/internal/ui"
 	"duckduckgo-chat-cli/internal/update"
+	"duckduckgo-chat-cli/internal/tools"
 
 	"github.com/AlecAivazis/survey/v2"
 	"github.com/c-bata/go-prompt"
@@ -125,7 +126,7 @@ func main() {
 	ui.Systemln("Welcome to DuckDuckGo AI Chat CLI!")
 
 	cfg = config.Initialize()
-	models.CheckChromeVersion()
+	tools.CheckChromeVersion()
 
 
 	chatSession = chat.InitializeSession(cfg)
