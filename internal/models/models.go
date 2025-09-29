@@ -59,6 +59,8 @@ var modelDisplayMap = map[Model]string{
 	o4mini:   "o4-mini",
 }
 
+var DefaultModel = GPT4Mini
+
 func GetModel(alias string) Model {
 	if model, ok := modelMap[ModelAlias(alias)]; ok {
 		return model
@@ -228,7 +230,7 @@ func HandleModelChange(chat interface{}, modelArg string) ModelAlias {
 	currentModel := GetCurrentModel(chat)
 	defaultModel, ok := modelDisplayMap[currentModel]
 	if !ok {
-		defaultModel = "GPT-4o-mini" // Fallback
+		defaultModel = modelDisplayMap[DefaultModel] // Fallback
 	}
 
 	var choice string

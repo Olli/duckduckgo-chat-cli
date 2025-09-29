@@ -54,7 +54,7 @@ type Config struct {
 func Initialize() *Config {
 	cfg := loadConfig()
 	if cfg.DefaultModel == "" {
-		cfg.DefaultModel = "gpt-4o-mini"
+		cfg.DefaultModel = string(models.DefaultModel)
 	}
 	if cfg.Search.MaxResults == 0 {
 		cfg.Search.MaxResults = 10
@@ -101,7 +101,7 @@ func Initialize() *Config {
 func loadConfig() *Config {
 	cfg := &Config{
 		TOSAccepted:      true,
-		DefaultModel:     "gpt-4o-mini",
+		DefaultModel:     string(models.DefaultModel),
 		ExportDir:        defaultExportPath(),
 		LastUpdateTime:   time.Now(),
 		ConfirmLongInput: true, // default to enabled for safety
