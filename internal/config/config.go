@@ -244,7 +244,7 @@ func handleModelChange(cfg *Config, chatSession interfaces.ChatSession) {
 			ui.Errorln("Error saving config: %v", err)
 			return
 		}
-		chatSession.ChangeModel(models.GetModel(model))
+		chatSession.ChangeModel(models.GetModelFromAlias(model))
 		ui.AIln("Default model updated and applied: %s", model)
 	} else {
 		ui.Errorln("Invalid choice. No changes made.")

@@ -76,7 +76,7 @@ type ChatPayload struct {
 }
 
 func InitializeSession(cfg *config.Config) *Chat {
-	model := models.GetModel(cfg.DefaultModel)
+	model := models.GetModelFromAlias(cfg.DefaultModel)
 	vqd, vqdHash1, feSignals, feVersion := GetVQD()
 	chat := NewChat(vqd, vqdHash1, feSignals, feVersion, model, cfg)
 	ui.AIln("Chat initialized with model: %s", model)

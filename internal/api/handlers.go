@@ -44,7 +44,7 @@ func ChatHandler(chatSession *chat.Chat, cfg *config.Config) gin.HandlerFunc {
 
 		// Change model if specified
 		if req.Model != "" {
-			if newModel := models.GetModel(req.Model); newModel != chatSession.Model {
+			if newModel := models.GetModelFromAlias(req.Model); newModel != chatSession.Model {
 				chatSession.ChangeModel(newModel)
 			}
 		}
@@ -213,7 +213,7 @@ func ModelChangeHandler(chatSession *chat.Chat) gin.HandlerFunc {
 		}
 
 		// Validate model exists
-		newModel := models.GetModel(req.Model)
+		newModel := models.GetModelFromAlias(req.Model)
 		availableModels := GetAvailableModels()
 
 		var modelInfo *ModelInfo

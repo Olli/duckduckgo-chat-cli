@@ -55,7 +55,7 @@ var modelDisplayMap = map[Model]string{
 
 var DefaultModel = GPT4Mini
 
-func GetModel(alias string) Model {
+func GetModelFromAlias(alias string) Model {
 	if model, ok := modelMap[ModelAlias(alias)]; ok {
 		return model
 	}
