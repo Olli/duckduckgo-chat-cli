@@ -290,7 +290,6 @@ func ProcessInput(c *Chat, input string, cfg *config.Config) {
 	}
 
 	// Use the new stable streaming renderer
-	// modelName := shortenModelName(string(c.Model))
 	modelName := models.Models.GetShortName(c.Model)
 	finalResponse := RenderStream(stream, modelName)
 
@@ -378,24 +377,6 @@ func ProcessInputAndReturn(c *Chat, input string, cfg *config.Config) (string, e
 	})
 
 	return finalResponse, nil
-}
-
-func shortenModelName(model string) string {
-	displayNames := map[string]models.ModelAlias{
-		"gpt-4o-mini":                               "gpt-4o-mini",
-		"gpt-5-mini":                                "gpt-5-mini",
-		"claude-3-haiku-20240307":                   "claude-3-haiku",
-		"meta-llama/Llama-3.3-70B-Instruct-Turbo":   "llama",
-		"mistralai/Mistral-Small-24B-Instruct-2501": "mixtral",
-		"o4-mini": "o4mini",
-		"o3-mini": "o3mini",
-	}
-
-	if shortName, exists := displayNames[model]; exists {
-		return string(shortName)
-	}
-
-	return "unknown"
 }
 
 func (c *Chat) FetchStream(content string) (<-chan string, error) {
