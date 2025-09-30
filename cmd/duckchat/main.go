@@ -268,7 +268,7 @@ func handleCommand(chatSession *chat.Chat, cfg *config.Config, cmd *command.Comm
 	case cmd.Type == "/model":
 		newModel := models.HandleModelChange(chatSession, cmd.Args)
 		if newModel != "" {
-			chatSession.ChangeModel(models.GetModelFromAlias(string(newModel)))
+			chatSession.ChangeModel(newModel)
 			cfg.DefaultModel = string(newModel)
 			if err := config.SaveConfig(cfg); err != nil {
 				ui.Errorln("Failed to save config: %v", err)

@@ -290,7 +290,8 @@ func ProcessInput(c *Chat, input string, cfg *config.Config) {
 	}
 
 	// Use the new stable streaming renderer
-	modelName := shortenModelName(string(c.Model))
+	// modelName := shortenModelName(string(c.Model))
+	modelName := models.Models.GetShortName(c.Model)
 	finalResponse := RenderStream(stream, modelName)
 
 	// Track successful chat interaction

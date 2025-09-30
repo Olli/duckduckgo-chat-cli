@@ -105,6 +105,12 @@ func GetCommandRegistry() *CommandRegistry {
 				Usage:       "/config",
 				Category:    "core",
 			},
+			"/listmodels": {
+				Name:        "/listmodels",
+				Description: "Lists all available models",
+				Usage:       "/listmodels",
+				Category:    "core",
+			},
 			"/model": {
 				Name:        "/model",
 				Description: "Change the chat model",
